@@ -1,7 +1,11 @@
-import Image from "next/image";
+import HeroSection from "@/components/landing-page/hero-section";
+
 
 export default function Home() {
   return (
-    <h1>hello next js</h1>
+    <div>
+     <HeroSection/>
+    </div>
   );
 }
+ 
