@@ -12,7 +12,7 @@ const ProductCard = ({product}) => {
     <Link href={`/products/${product.id}`}>
       <Card
         className={
-          "group card-hover hover:bg-primary-foreground/10 border-solid border-gray-400 min-h-[180px]"
+          "group card-hover hover:bg-primary-foreground/10 border-solid border-gray-400 min-h-45"
         }
       >
         <CardHeader className={"flex-1"}>
@@ -40,7 +40,12 @@ const ProductCard = ({product}) => {
               <Button
                 variant="ghost"
                 size="icon-sm"
-                className={cn("h-8 w-8 text-primary hover:text-destructive",hasVoted ? "bg-primary/10 text-primary hover:bg-primary/20": "hover:bg-primary/10 hover:text-primary")}
+                className={cn(
+                  "h-8 w-8 text-primary hover:text-destructive",
+                  hasVoted
+                    ? "bg-primary/10 text-primary hover:bg-primary/20"
+                    : "hover:bg-primary/10 hover:text-primary"
+                )}
               >
                 <ChevronUpIcon className="size-5" />
               </Button>
@@ -50,7 +55,12 @@ const ProductCard = ({product}) => {
               <Button
                 variant="ghost"
                 size="icon-sm"
-                className={cn("h-8 w-8 text-primary hover:text-destructive",hasVoted ? "hover:text-destructive": "opacity-50 cursor-not-allowed")}
+                className={cn(
+                  "h-8 w-8 text-primary hover:text-destructive",
+                  hasVoted
+                    ? "hover:text-destructive"
+                    : "opacity-50 cursor-not-allowed"
+                )}
               >
                 <ChevronDownIcon className="size-5" />
               </Button>
