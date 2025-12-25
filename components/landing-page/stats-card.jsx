@@ -5,7 +5,7 @@ const StatsCard = ({icon:Icon,label,value,hasBorder}) => {
   return (
     <div className={cn("space-y-2", hasBorder && "border-x border-border/50")}>
       <div className="flex items-center justify-center gap-2">
-        <Icon className="size-5 text-primary/70" />
+        <Icon className="size-5 text-pink-500" />
         <p className="text-3xl sm:text-4xl font-bold">{value}</p>
       </div>
       <p className="text-sm text-muted-foreground">{label}</p>
