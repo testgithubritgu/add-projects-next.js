@@ -1,0 +1,77 @@
+export const allProducts = [
+  {
+    id: 1,
+    name: "Modern Full Stack Next.js Course",
+    slug: "modern-full-stack-nextjs-course",
+    tagline: "Learn to build modern full stack apps",
+    description:
+      "Learn to build modern full stack applications with Next.js 14, React, Tailwind CSS, Drizzle ORM, and Neon database.",
+    websiteUrl: "https://nextjscourse.dev",
+    tags: ["Next.js", "Tailwind CSS", "Full Stack", "Course"],
+    createdAt: new Date(Date.now() - 2 * 24 * 60 * 60 * 1000), // 2 days ago
+    approvedAt: new Date(Date.now() - 1 * 24 * 60 * 60 * 1000), // 1 day ago
+    status: "approved" as const,
+    submittedBy: "john@example.com",
+    voteCount: 120,
+  },
+  {
+    id: 2,
+    name: "TaskFlow Pro",
+    slug: "taskflow-pro",
+    tagline: "Manage projects like never before",
+    description:
+      "Streamline your team's workflow with intelligent task management, automated notifications, and real-time collaboration features.",
+    websiteUrl: "https://taskflow.app",
+    tags: ["Productivity", "SaaS", "Collaboration"],
+    createdAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000),
+    approvedAt: new Date(Date.now() - 4 * 24 * 60 * 60 * 1000),
+    status: "approved" as const,
+    submittedBy: "sarah@example.com",
+    voteCount: 342,
+  },
+  {
+    id: 3,
+    name: "AI Resume Builder",
+    slug: "ai-resume-builder",
+    tagline: "Create job-winning resumes with AI",
+    description:
+      "AI-powered resume builder that helps you craft professional resumes tailored to specific job roles in minutes.",
+    websiteUrl: "https://airesume.ai",
+    tags: ["AI", "Career", "SaaS"],
+    createdAt: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000),
+    approvedAt: null,
+    status: "pending" as const,
+    submittedBy: "anonymous",
+    voteCount: 56,
+  },
+  {
+    id: 4,
+    name: "DevSnippet Hub",
+    slug: "devsnippet-hub",
+    tagline: "Save, share, and discover code snippets",
+    description:
+      "A community-driven platform to save, organize, and share reusable code snippets across multiple programming languages.",
+    websiteUrl: "https://devsnippet.dev",
+    tags: ["Developer Tools", "Open Source", "Productivity"],
+    createdAt: new Date(Date.now() - 10 * 24 * 60 * 60 * 1000),
+    approvedAt: new Date(Date.now() - 8 * 24 * 60 * 60 * 1000),
+    status: "approved" as const,
+    submittedBy: "dev@opensource.com",
+    voteCount: 215,
+  },
+  {
+    id: 5,
+    name: "Finance Tracker",
+    slug: "finance-tracker",
+    tagline: "Track expenses and income effortlessly",
+    description:
+      "A simple yet powerful personal finance tracker to monitor expenses, income, and savings with clean visual reports.",
+    websiteUrl: "https://financetracker.io",
+    tags: ["Finance", "Personal", "SaaS"],
+    createdAt: new Date(Date.now() - 14 * 24 * 60 * 60 * 1000),
+    approvedAt: null,
+    status: "rejected" as const,
+    submittedBy: "review@finapp.com",
+    voteCount: 18,
+  },
+];
