@@ -1,8 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Inter } from "next/font/google"
+import { Outfit } from "next/font/google"
 
-const inter = Inter({
+const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-inter", // optional but recommended
 })
@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${inter.className} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${outfit.className} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>
