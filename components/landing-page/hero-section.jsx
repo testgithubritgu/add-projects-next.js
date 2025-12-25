@@ -24,21 +24,24 @@ const LiveBadge =()=>{
 
 const stateData = [
   {
-    icon:RocketIcon,
-    value:"3.5k+",
-    label:"Projects Shared"
+    icon: RocketIcon,
+    value: "3.5k+",
+    label: "Projects Shared",
+    hasBorder: false,
   },
   {
-    icon:UserIcon,
-    value:"10k+",
-    label:"Active Creators"
+    icon: UserIcon,
+    value: "10k+",
+    label: "Active Creators",
+    hasBorder: true,
   },
   {
-    icon:EyeIcon,
-    value:"50k+",
-    label:"Monthly Visitors"
+    icon: EyeIcon,
+    value: "50k+",
+    label: "Monthly Visitors",
+    hasBorder: false,
   },
-]
+];
 
 const HeroSection = () => {
   return (
