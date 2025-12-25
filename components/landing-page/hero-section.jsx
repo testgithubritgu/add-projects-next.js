@@ -78,10 +78,12 @@ const HeroSection = () => {
           </Link>
         </Button>
       </div>
-      {stateData.map((state)=>(
-
-      <StatsCard key={state.label} {...state} />
-      ))}
+      <div className='flex justify-between gap-14'>
+        {" "}
+        {stateData.map((state) => (
+          <StatsCard key={state.label} {...state} />
+        ))}
+      </div>
     </div>
   );
 }
