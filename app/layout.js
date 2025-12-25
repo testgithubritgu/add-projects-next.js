@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Outfit } from "next/font/google"
 import Header from "@/components/landing-page/common/Header";
+import Footer from "@/components/landing-page/common/Footer";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
       >
         <Header/>
         {children}
+        <Footer />
       </body>
     </html>
   );
