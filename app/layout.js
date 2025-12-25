@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Outfit } from "next/font/google"
+import Header from "@/components/landing-page/common/Header";
 
 const outfit = Outfit({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${outfit.className} ${geistMono.variable} antialiased`}
       >
+        <Header/>
         {children}
       </body>
     </html>

@@ -26,13 +26,13 @@ const recentlyLaunched = [
 ];
   return (
     <section className="py-20">
-      <div className="wrapper">
+      <div className="wrapper space-y-12">
         <SectionHeader
           icon={RocketIcon}
           description={"Discover the latest products from our community"}
           title={"Recently Launched"}
         />
-        {!recentlyLaunched.length > 0 ? (
+        {recentlyLaunched.length > 0 ? (
             <div className="grid-wrapper">
           {recentlyLaunched.map((product) => (
             <ProductCard key={product.id} product={product} />
