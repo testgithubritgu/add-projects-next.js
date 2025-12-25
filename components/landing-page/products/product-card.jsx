@@ -26,7 +26,7 @@ const ProductCard = ({product}) => {
                 >
                   {product.name}
                 </CardTitle>
-                {product.isFeatured && (
+                {product.voteCount > 100 && (
                   <Badge
                     className={"gap-1 bg-primary text-primary-foreground "}
                   >
@@ -50,7 +50,7 @@ const ProductCard = ({product}) => {
                 <ChevronUpIcon className="size-5" />
               </Button>
               <span className="text-sm text-foreground transition-colors font-semibold">
-                10
+                {product.voteCount}
               </span>
               <Button
                 variant="ghost"
@@ -69,7 +69,7 @@ const ProductCard = ({product}) => {
         </CardHeader>
         <CardFooter>
           <div className="flex gap-2 items-center ">
-            {product.tags.map((tag) => (
+            {product.tags?.map((tag) => (
               <Badge variant={"secondary"} key={tag}>
                 {tag}
               </Badge>
