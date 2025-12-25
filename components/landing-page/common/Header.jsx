@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { SignedIn, SignedOut, SignIn, SignInButton, SignUp, SignUpButton, UserButton } from "@clerk/nextjs";
 import { CompassIcon, HomeIcon, SparkleIcon, UserIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
@@ -38,8 +39,19 @@ const Header = () => {
             </Link>
           </nav>
           <div className="flex items-center gap-3">
-            {!isSignIn ? (
-                <>
+            <SignedOut>
+              <SignInButton >
+                <Button variant="primary">
+                    Sign In
+                </Button>
+              </SignInButton>
+              <SignUpButton>
+                <Button >
+                  Sign Up
+                </Button>
+              </SignUpButton>
+            </SignedOut>
+            <SignedIn>
               <Button asChild>
                 <Link href={"/submit"}>
                   <SparkleIcon className="size-4" />
@@ -47,16 +59,10 @@ const Header = () => {
                 </Link>
               </Button>
               {/* clerk user  */}
-              <Button variant="ghost">
-                    <UserIcon /> 
-              </Button>
-                </>
-            ) : (
-              <>
-                <Button variant="ghost">Sign In</Button>
-                <Button>Sigh Up</Button>
-              </>
-            )}
+            
+              <UserButton />
+            </SignedIn>
+            
           </div>
         </div>
       </div>
