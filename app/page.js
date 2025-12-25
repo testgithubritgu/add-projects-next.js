@@ -6,7 +6,7 @@ import RecentlyLaunchedProducts from "@/components/landing-page/recently-launche
 export default function Home() {
   return (
     <div>
-     <HeroSection/>
+    <HeroSection/>
     <FeaturedProducts/>
     <RecentlyLaunchedProducts />
     </div>
