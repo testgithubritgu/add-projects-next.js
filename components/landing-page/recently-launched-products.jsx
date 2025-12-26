@@ -1,3 +1,4 @@
+'use cache'
 import React from 'react'
 import SectionHeader from './common/section-header';
 import { CalendarSearchIcon, RocketIcon } from 'lucide-react';
