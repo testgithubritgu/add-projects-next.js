@@ -1,8 +1,8 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Outfit } from "next/font/google"
-import Header from "@/components/landing-page/common/Header";
-import Footer from "@/components/landing-page/common/Footer";
+import Header from "@/components/common/Header";
+import Footer from "@/components/common/Footer";
 import { ClerkProvider } from "@clerk/nextjs";
 
 const outfit = Outfit({
@@ -28,15 +28,15 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
 
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${outfit.className} ${geistMono.variable} antialiased`}
-      >
-        <Header/>
-        {children}
-        <Footer />
-      </body>
-    </html>
-        </ClerkProvider>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${outfit.className} ${geistMono.variable} antialiased`}
+        >
+          <Header />
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
