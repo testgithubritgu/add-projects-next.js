@@ -1,16 +1,18 @@
 "use client"
+import { addProduct } from '@/lib/products/product-action';
 import FormField from '../forms/form-field';
 import { Button } from '../ui/button';
 import { SparkleIcon } from 'lucide-react';
 
 const ProductSubmitForm = () => {
-  const handelSubmit = (e)=>{
-    'use server'
-    e.preventDefault();
-    console.log('bhai form to submit ho gaya ')
+
+  const handelSubmit =async (e)=>{
+    await addProduct(e)
   }
+
   return (
-    <form className="space-y-6" onSubmit={handelSubmit}>
+    <form className="space-y-6" action={handelSubmit}>
+
       <FormField
         label="Product Name"
         name="name"
@@ -85,6 +87,7 @@ const ProductSubmitForm = () => {
         <SparkleIcon className="size-4" />
         Submit Product
       </Button>
+      
     </form>
   );
 };
