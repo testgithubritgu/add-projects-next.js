@@ -6,7 +6,7 @@ export default function SubmitPage() {
   return (
     <section className="py-20">
       <div className="wrapper">
-        <div>
+        <div className="mb-12">
           <SectionHeader
             title={"Submit Your Project"}
             icon={SparkleIcon}
