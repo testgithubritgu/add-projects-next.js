@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { SignedIn, SignedOut, SignIn, SignInButton, SignUp, SignUpButton, UserButton } from "@clerk/nextjs";
-import { CompassIcon, HomeIcon, SparkleIcon, UserIcon } from "lucide-react";
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
+import { CompassIcon, HomeIcon, SparkleIcon } from "lucide-react";
 import Link from "next/link";
 import React, { Suspense } from "react";
 const Logo = () => {
@@ -16,7 +16,6 @@ const Logo = () => {
   );
 };
 const Header = () => {
-  const isSignIn = false;
   return (
     <header className="sticky  top-0 z-50 border-b border-b-gray-400 bg-background/50 backdrop-blur supports-backdrop-filter:bg-background/60">
       <div className="wrapper px-12">
