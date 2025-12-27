@@ -10,7 +10,10 @@ export default function Home() {
   
         <HeroSection />
         <FeaturedProducts />
+        <Suspense fallback="loading...">
+
         <RecentlyLaunchedProducts />
+        </Suspense>
    
     </div>
   );
