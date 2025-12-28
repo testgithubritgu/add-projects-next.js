@@ -1,18 +1,24 @@
 "use client"
-import { addProduct } from '@/lib/products/product-action';
+import {  addProductAction } from '@/lib/products/product-action';
 import FormField from '../forms/form-field';
 import { Button } from '../ui/button';
 import { SparkleIcon } from 'lucide-react';
+import { useActionState } from 'react';
+
+const initialState = {
+  success : false,
+  error: {},
+  message: ""
+}
 
 const ProductSubmitForm = () => {
-
-  const handelSubmit =async (e)=>{
-    await addProduct(e)
-  }
-
+  const [state, formAction, isPending] = useActionState(
+    addProductAction,
+    initialState
+  );
+  
   return (
-    <form className="space-y-6" action={handelSubmit}>
-
+    <form className="space-y-6" action={formAction}>
       <FormField
         label="Product Name"
         name="name"
@@ -87,7 +93,6 @@ const ProductSubmitForm = () => {
         <SparkleIcon className="size-4" />
         Submit Product
       </Button>
-      
     </form>
   );
 };
