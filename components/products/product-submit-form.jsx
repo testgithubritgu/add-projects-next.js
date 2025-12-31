@@ -2,7 +2,7 @@
 import {  addProductAction } from '@/lib/products/product-action';
 import FormField from '../forms/form-field';
 import { Button } from '../ui/button';
-import { SparkleIcon } from 'lucide-react';
+import { Loader2Icon, SparkleIcon } from 'lucide-react';
 import { useActionState } from 'react';
 
 const initialState = {
@@ -16,7 +16,7 @@ const ProductSubmitForm = () => {
     addProductAction,
     initialState
   );
-  
+ console.log(state)
   return (
     <form className="space-y-6" action={formAction}>
       <FormField
@@ -90,8 +90,14 @@ const ProductSubmitForm = () => {
         className={"w-full bg-pink-600 cursor-pointer"}
         size="lg"
       >
-        <SparkleIcon className="size-4" />
-        Submit Product
+        {isPending ? (
+          <Loader2Icon className="size-4 animate-spin" />
+        ) : (
+          <>
+            <SparkleIcon className="size-4" />
+            Submit Product
+          </>
+        )}
       </Button>
     </form>
   );
