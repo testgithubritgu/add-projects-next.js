@@ -7,7 +7,7 @@ import { useActionState } from 'react';
 
 const initialState = {
   success : false,
-  error: {},
+  errors: {},
   message: ""
 }
 
@@ -16,7 +16,9 @@ const ProductSubmitForm = () => {
     addProductAction,
     initialState
   );
- console.log(state)
+  const {errors,success,message} =state
+  console.log(errors?.name);
+
   return (
     <form className="space-y-6" action={formAction}>
       <FormField
@@ -25,7 +27,7 @@ const ProductSubmitForm = () => {
         id="name"
         placeholder="My Awesome Product"
         onChange={() => {}}
-        error=""
+        error={errors?.name}
       />
 
       <FormField
@@ -35,7 +37,7 @@ const ProductSubmitForm = () => {
         placeholder="my-awesome-product"
         required={true}
         onChange={() => {}}
-        error=""
+        error={errors?.slug}
         helperText={"URL-friendly version of your product name"}
       />
 
@@ -48,7 +50,7 @@ const ProductSubmitForm = () => {
         onChange={() => {
           console.log("object");
         }}
-        error=""
+        error={errors?.tagline}
       />
 
       <FormField
@@ -58,7 +60,7 @@ const ProductSubmitForm = () => {
         placeholder="A brie,catchy description"
         required
         onChange={() => {}}
-        error=""
+        error={errors?.description}
         textarea
         helperText={"URL-friendly version of your product name"}
       />
@@ -70,7 +72,7 @@ const ProductSubmitForm = () => {
         placeholder="https://yourproduct.com"
         required
         onChange={() => {}}
-        error=""
+        error={errors?.websiteUrl}
         helperText="Enter your product's website or landing page"
       />
 
@@ -81,7 +83,7 @@ const ProductSubmitForm = () => {
         placeholder="AI, Productivity, SaaS"
         required
         onChange={() => {}}
-        error=""
+        error={errors?.tags}
         helperText="Comma-separated tags (e.g., AI, SaaS, Productivity)"
       />
 
