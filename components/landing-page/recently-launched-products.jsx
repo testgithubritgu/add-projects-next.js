@@ -5,6 +5,7 @@ import { CalendarSearchIcon, RocketIcon } from "lucide-react";
 import ProductCard from "../products/product-card";
 import EmptyState from "../common/empty-state";
 import { getRecentlyLaunchedProducts } from "@/lib/products/product-select";
+import ProductSkeleton from "../products/product-skeleton";
 
 const RecentlyLaunchedProducts = async () => {
   const recentlyLaunched = await getRecentlyLaunchedProducts();
@@ -23,10 +24,8 @@ const RecentlyLaunchedProducts = async () => {
             ))}
           </div>
         ) : (
-          <EmptyState
-            message="No products launched in the last week, check back soon for the new launches"
-            icon={CalendarSearchIcon}
-          />
+          <ProductSkeleton />
+          
         )}
       </div>
     </section>
