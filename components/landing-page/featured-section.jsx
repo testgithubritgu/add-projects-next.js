@@ -9,7 +9,7 @@ import { getFeaturedData } from "@/lib/products/product-select";
 
 const FeaturedProducts = async () => {
   const featuredProducts = await getFeaturedData();
-  console.log(featuredProducts);
+  console.log(featuredProducts,'<<<<<<<<<<<<featured products');
   return (
     <section className="py-20 bg-muted/50">
       <div className="wrapper">
