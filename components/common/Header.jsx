@@ -3,6 +3,7 @@ import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@cl
 import { CompassIcon, HomeIcon, SparkleIcon } from "lucide-react";
 import Link from "next/link";
 import React, { Suspense } from "react";
+import CustomUserButton from "./custom-user-button";
 const Logo = () => {
   return (
     <Link href={"/"} className="flex items-center gap-2 group ">
@@ -56,7 +57,8 @@ const Header = () => {
                 </Button>
                 {/* clerk user  */}
 
-                <UserButton />
+                {/* <UserButton /> */}
+                <CustomUserButton />
               </SignedIn>
             </Suspense>
           </div>
