@@ -4,6 +4,7 @@ import FormField from '../forms/form-field';
 import { Button } from '../ui/button';
 import { Loader2Icon, SparkleIcon } from 'lucide-react';
 import { useActionState } from 'react';
+import { cn } from '@/lib/utils';
 
 const initialState = {
   success : false,
@@ -21,13 +22,18 @@ const ProductSubmitForm = () => {
 
   return (
     <form className="space-y-6" action={formAction}>
+      {message && (<div role='alert' aria-live='polite' className={cn('p-4 rounded-lg border ',success ? "bg-primary/10 border-primary text-primary" :"bg-destructive border-destructive text-destructive")}>
+    {message}
+
+        </div>)
+        }
       <FormField
         label="Product Name"
         name="name"
         id="name"
         placeholder="My Awesome Product"
         onChange={() => {}}
-        error={errors?.name}
+        error={errors?.name ?? []}
       />
 
       <FormField
@@ -37,7 +43,7 @@ const ProductSubmitForm = () => {
         placeholder="my-awesome-product"
         required={true}
         onChange={() => {}}
-        error={errors?.slug}
+        error={errors?.slug ?? []}
         helperText={"URL-friendly version of your product name"}
       />
 
@@ -50,7 +56,7 @@ const ProductSubmitForm = () => {
         onChange={() => {
           console.log("object");
         }}
-        error={errors?.tagline}
+        error={errors?.tagline ?? []}
       />
 
       <FormField
@@ -60,7 +66,7 @@ const ProductSubmitForm = () => {
         placeholder="A brie,catchy description"
         required
         onChange={() => {}}
-        error={errors?.description}
+        error={errors?.description ?? []}
         textarea
         helperText={"URL-friendly version of your product name"}
       />
@@ -72,7 +78,7 @@ const ProductSubmitForm = () => {
         placeholder="https://yourproduct.com"
         required
         onChange={() => {}}
-        error={errors?.websiteUrl}
+        error={errors?.websiteUrl ?? []}
         helperText="Enter your product's website or landing page"
       />
 
@@ -83,7 +89,7 @@ const ProductSubmitForm = () => {
         placeholder="AI, Productivity, SaaS"
         required
         onChange={() => {}}
-        error={errors?.tags}
+        error={errors?.tags ?? []}
         helperText="Comma-separated tags (e.g., AI, SaaS, Productivity)"
       />
 
