@@ -76,8 +76,8 @@ const Page = async ({ params }) => {
                 </div>
         </div>
         {websiteUrl && (
-          <Button asChild className={"min-w-2xl mx-auto rounded-lg "} variant='outline'>
-            <a href={websiteUrl} target='_blank' rel='noopener noreferrer'>
+          <Button asChild className={"min-w-fit    mx-auto  rounded-lg "} variant='outline'>
+            <a href={websiteUrl} target='_blank' rel='noopener noreferrer' className='w-fit'>
               Visit Website <ExternalLink  className='size-4 ml-2'/>
             </a>
           </Button>

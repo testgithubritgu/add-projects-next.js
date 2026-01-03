@@ -1,17 +1,15 @@
 "use cache";
-import React from "react";
 import SectionHeader from "../common/section-header";
-import { CalendarSearchIcon, RocketIcon } from "lucide-react";
+import { RocketIcon } from "lucide-react";
 import ProductCard from "../products/product-card";
-import EmptyState from "../common/empty-state";
 import { getRecentlyLaunchedProducts } from "@/lib/products/product-select";
 import ProductSkeleton from "../products/product-skeleton";
 
 const RecentlyLaunchedProducts = async () => {
   const recentlyLaunched = await getRecentlyLaunchedProducts();
   return (
-    <section className="py-20">
-      <div className="wrapper space-y-12">
+    <section className="py-12 sm:py-16 lg:py-20">
+      <div className="wrapper px-4 sm:px-6 space-y-8 sm:space-y-12">
         <SectionHeader
           icon={RocketIcon}
           description={"Discover the latest products from our community"}
@@ -25,7 +23,6 @@ const RecentlyLaunchedProducts = async () => {
           </div>
         ) : (
           <ProductSkeleton />
-          
         )}
       </div>
     </section>

@@ -1,5 +1,5 @@
 "use client"
-import {  addProductAction } from '@/lib/products/product-action';
+import { addProductAction } from '@/lib/products/product-action';
 import FormField from '../forms/form-field';
 import { Button } from '../ui/button';
 import { Loader2Icon, SparkleIcon } from 'lucide-react';
@@ -7,7 +7,7 @@ import { useActionState } from 'react';
 import { cn } from '@/lib/utils';
 
 const initialState = {
-  success : false,
+  success: false,
   errors: {},
   message: ""
 }
@@ -17,16 +17,25 @@ const ProductSubmitForm = () => {
     addProductAction,
     initialState
   );
-  const {errors,success,message} =state
-  console.log(errors?.name);
+  const { errors, success, message } = state
 
   return (
-    <form className="space-y-6" action={formAction}>
-      {message && (<div role='alert' aria-live='polite' className={cn('p-4 rounded-lg border ',success ? "bg-primary/10 border-primary text-primary" :"bg-destructive border-destructive text-destructive")}>
-    {message}
+    <form className="space-y-4 sm:space-y-6 px-4 sm:px-0" action={formAction}>
+      {message && (
+        <div
+          role='alert'
+          aria-live='polite'
+          className={cn(
+            'p-3 sm:p-4 rounded-lg border text-sm sm:text-base',
+            success
+              ? "bg-primary/10 border-primary text-primary"
+              : "bg-destructive border-destructive text-destructive"
+          )}
+        >
+          {message}
+        </div>
+      )}
 
-        </div>)
-        }
       <FormField
         label="Product Name"
         name="name"
@@ -53,9 +62,7 @@ const ProductSubmitForm = () => {
         id="tagline"
         placeholder="A brief, catchy description"
         required={true}
-        onChange={() => {
-          console.log("object");
-        }}
+        onChange={() => {}}
         error={errors?.tagline ?? []}
       />
 
@@ -63,7 +70,7 @@ const ProductSubmitForm = () => {
         label="Description"
         name="description"
         id="description"
-        placeholder="A brie,catchy description"
+        placeholder="A brief, catchy description"
         required
         onChange={() => {}}
         error={errors?.description ?? []}
@@ -95,7 +102,7 @@ const ProductSubmitForm = () => {
 
       <Button
         type="submit"
-        className={"w-full bg-pink-600 cursor-pointer"}
+        className={"w-full bg-pink-600 cursor-pointer text-sm sm:text-base"}
         size="lg"
       >
         {isPending ? (
