@@ -3,7 +3,7 @@ import React from 'react'
 export const generateStaticParams =async () =>{
     const products = await getFeaturedData()
     return products.map(product =>({
-        id:product.id.toString()
+        slug:product.slug.toString()
     }))
 }
 const Page =async ({params}) => {

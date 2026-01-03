@@ -13,12 +13,12 @@ export default function ProductSkeleton() {
           <Skeleton className={"h-7 w-96"} />
         </div>
         <div className="grid-wrapper">
-          {Array.from(6)
+          {Array.from({length:6})
             .fill("")
             .map((_, idx) => (
-              <div className="border rounded-lg p-6" key={idx}>
+              <div className="border-2 rounded-lg p-6 min-h-[200px]" key={idx}>
                 <div className="flex items-start gap-4 mb-4">
-                  <div>
+                  <div className="flex-1">
                     <Skeleton className={"h-6 w-3/4 mb-2"} />
                     <Skeleton className={"h-4 w-full"} />
                   </div>
