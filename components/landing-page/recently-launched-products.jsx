@@ -7,6 +7,7 @@ import ProductSkeleton from "../products/product-skeleton";
 
 const RecentlyLaunchedProducts = async () => {
   const recentlyLaunched = await getRecentlyLaunchedProducts();
+  
   return (
     <section className="py-12 sm:py-16 lg:py-20">
       <div className="wrapper px-4 sm:px-6 space-y-8 sm:space-y-12">
@@ -22,7 +23,7 @@ const RecentlyLaunchedProducts = async () => {
             ))}
           </div>
         ) : (
-          <ProductSkeleton />
+         <p className="text-muted-foreground">No recently launched products...!</p>
         )}
       </div>
     </section>
